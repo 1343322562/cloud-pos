@@ -1,0 +1,25 @@
+<template name="renderOrderList">
+    <block>
+        <view style="padding-bottom: 150rpx;">
+            <view wx:key="index" class="orderListCard" bindtap="anonymousFunc0" wx:for="{{loopArray33}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
+                <view class="order-line order-top"><text class="orderNo"><text class="sign"></text><text class="text">订单号: {{item.$original.srl}}</text></text>
+                    <view class="orderDate">
+                        <view class="dateInfo">{{item.$loopState__temp2}}</view>
+                        <view class="dateInfo">{{item.$loopState__temp4}}</view>
+                    </view>
+                </view>
+                <view style="{{'display: ' + (isShowBottom || 'flex') + ';'}}" class="order-line order-bottom"><text class="orderState orderPayInfo">{{item.$original.statusStr}}</text><text>{{'共' + item.$original.orderQty + '件商品'}}</text><text class="orderPrice orderPayInfo">￥{{item.$original.realMoney}}</text>
+                </view>
+            </view>
+        </view>
+    </block>
+</template>
+<block wx:if="{{$taroCompReady}}">
+    <view class="orderList">
+        <block wx:if="{{IS_H5_ENV}}">
+            <v-navbar compid="{{$compid__233}}"></v-navbar>
+        </block>
+        <at-search-bar compid="{{$compid__234}}"></at-search-bar>
+        <template is="renderOrderList" data="{{...anonymousState__temp5}}"></template>
+    </view>
+</block>

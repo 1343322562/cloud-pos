@@ -1,0 +1,9 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="my">
+        <header-bg></header-bg>
+        <block wx:if="{{IS_H5_ENV}}">
+            <v-navbar compid="{{$compid__211}}"></v-navbar>
+        </block>
+        <my-cards compid="{{$compid__212}}"></my-cards>
+    </view>
+</block>

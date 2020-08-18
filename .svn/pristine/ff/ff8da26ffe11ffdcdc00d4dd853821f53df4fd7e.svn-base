@@ -1,0 +1,209 @@
+.shopDetail{
+  font-size: 28px;
+}
+
+.topBar .sd-seach-container{
+  padding: 46rpx 0 0 20rpx;
+}
+
+.sd-seach-container{
+  position: relative;
+  z-index: 10;
+  padding: 24px 0 0 18px;
+  .sd-seach {
+    width: 66%;
+    border-radius: 30px;
+    height: 60px;
+    .at-search-bar__action{
+      height: 22PX;
+      line-height: 22PX;
+    }
+  }  
+}
+
+// 头部店铺卡片
+.sd-shopCard-container {
+  width: 100%;
+  margin-top: 30px;
+  height: 260px;
+  .cardView{
+    box-shadow: 5px 9px 17px #ddd;
+    .at-avatar--large {
+      width: 125px;
+      height: 125px;
+    }
+  }
+}
+
+// goods 详情(分类,商品等)
+.sd-shop-detail-container{
+  height: 100%;
+  margin: 0;
+  overflow-y: hidden;
+
+  // 分类栏
+  .sd-good-menu-box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 185px;
+    height: auto;
+    min-height: 71vh;
+    background: #f5f5f5;
+    padding-top: 15px;
+
+    .menu-item {
+      display: flex;
+      height: 95px;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .item-selected{
+      border-left: 7px solid #fe680a;
+      background-color: #fff;
+      color: #fe680a; 
+      width: 100%;
+      border-radius: 0 9px 9px 0;
+      box-shadow: 2px 7px 12px #ddd;
+    }
+    .item-text {
+      display: block;
+      height: 90px;
+      line-height: 90px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  // goods detail
+  .sd-good-detail-box {
+    height: 100%;
+    margin-left: 208px;
+    background-color: #fff;
+
+    .sd-good-type-box{
+      display: block;
+      margin-top: 5px;
+      overflow-x: scroll;
+      white-space: nowrap;
+      background-color: transparent;
+
+      .at-tag--normal {
+        font-weight: bold;
+        letter-spacing: 1PX;
+        padding: 0 15px;
+        height: 54px;
+        line-height: 50px;
+        white-space: normal;
+        font-size: 27px;
+        margin-right: 15px;
+        font-weight: bold;
+        display: inline-block;
+        background-color: #f5f5f5;
+        border: 1PX solid #cdcdcd;
+        color: #222222;
+      }
+      .at-tag--active{
+        color: #fe680a;
+        background-color: #ffeadd;
+        border: 1PX solid #ff6709;
+        margin-bottom: 0;
+      }
+    }
+
+    .sd-good-cards-box {
+      overflow-y: scroll;
+      height: 68vh;
+      
+
+      .sd-good-cards-item{
+        display: flex;
+        align-items: center;
+
+        .goodInfo {
+          line-height: 46px;
+          padding: 20px 22px 20px 0;
+          border-bottom: 1PX solid #eee;
+
+          .title{
+            letter-spacing: 1px;
+            width: 100%;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            word-break: break-all;
+          }
+          .tags{
+            line-height: 20px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        
+            .PromoionTag{
+              background-color: #fe4543;
+              color: #ffffff;
+              font-size: 25px;
+              transform: scale(.8);
+              vertical-align: super;
+            }
+          }
+          
+
+          .price{
+
+            .new{
+              color: #fe680a;
+              font-size: 32px;
+              font-weight: bold;
+            }
+            .old{
+              color: #afafaf;
+              text-decoration: line-through;
+              font-size: 26px;
+              margin-left: 16px;
+            }
+          }
+
+          .goodBottom{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .salesNum{
+              color: #8a8a8a;
+              font-size: 23px;
+              padding-top: 5px;
+            }
+            .changeGoodsCar{
+              display: flex;
+              align-items: center;
+
+              .goodsCarNum{
+                display: inline-block;
+                width: 44px;
+                vertical-align: middle;
+                font-size: 26px;
+                margin: 0 5px;
+                text-align: center;
+              }
+              .addIcon{
+                font-size: 6px !important;
+                color: rgb(51, 51, 51);
+                transform: rotateZ(45deg);
+                background: #feb40f;
+                border-radius: 50%;
+                font-weight: bold;
+              }
+              .subIcon, .addIcon{
+                padding: 9px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

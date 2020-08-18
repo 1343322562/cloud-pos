@@ -1,0 +1,33 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="liquidation">
+        <block wx:if="{{!IS_WEAPP_ENV}}">
+            <v-navbar compid="{{$compid__236}}"></v-navbar>
+        </block>
+        <view class="{{'top-bg ' + headerBG}}"></view>
+        <view class="pay-res-box">
+            <view class="shop-title">
+                <image mode="aspectFill" bindtap="anonymousFunc0" style="border-radius: 50%;width: 36px;height: 36px;background: #999999;vertical-align: sub;" src="https://pic2.zhimg.com/80/v2-0a80487d102fa8f4323279779e7ee940_720w.jpg"></image><text class="title">{{storeInfo.storeName}}</text>
+            </view>
+            <view class="goods-detail" wx:key="id" wx:for="{{loopArray34}}" wx:for-item="item" wx:for-index="index">
+                <view class="goods-item">
+                    <image mode="scaleToFill" bindtap="anonymousFunc1" style="{{'width: 75px;height: 75px;vertical-align: sub;background:url(' + moren + ')back;ground-size: 55%;background-position: center;background-repeat: no-repeat;'}}" src="{{item.$original.picUrl}}" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"></image>
+                    <view class="detail">
+                        <view class="name">{{item.$original.productName}}</view>
+                        <view class="props"><text>￥{{item.$original.salePrice}}</text><text>x{{item.$original.saleNum}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="contact">共{{settlementData['num']}}件商品</view>
+        </view>
+        <view class="pay-way"><text class="title">支付方式</text><text class="way">货到付款</text>
+        </view>
+        <view class="order-price"><text class="info">全场不限购~~~</text><text class="content">小计: ￥<text class="all-price">{{settlementData['amt']}}</text></text>
+        </view>
+        <view class="pay-bottom">
+            <view class="price-info">应付款: <text class="price">￥{{settlementData['amt']}}</text>
+            </view>
+            <at-button compid="{{$compid__237}}">确认下单</at-button>
+        </view>
+    </view>
+</block>

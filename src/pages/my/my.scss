@@ -1,0 +1,153 @@
+.my .at-nav-bar__title {
+  font-size: 29px;
+  height: 34px;
+}
+
+.my {
+  font-size: 29px;
+  width: 100%;
+  height: 100vh;
+  background-color: #f3f3f3;
+  overflow: hidden;
+}
+
+// 全部订单事件的占位盒子 （用的框架无法添加事件）
+.orderClickBox{
+  position: absolute;
+  height: 80px;
+  width: 210px;
+  right: 0;
+  top: 0;
+  background-color: transparent;
+}
+
+.at-card,
+.at-card__header,
+.at-tab-bar::after,
+.at-nav-bar::after {
+  border-width: 0;
+}
+
+.at-card__header {
+  padding: 30px 27px;
+}
+
+.my-header-card-box {
+  margin-top: 3%;
+  height: 230px;
+}
+
+// .my-user-header-card {
+//   height: 230px;
+//   width: 94%;
+//   background-color: white;
+//   margin: 0 3%;
+//   position: absolute;
+//   z-index: 100;
+//   border-radius: 25px;
+//   display: flex;
+//   align-items: center;
+// }
+
+// .my-user-info-box {
+//   width: 87%;
+//   margin: 0 auto;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+// }
+
+// .my-user-info {
+//   display: flex;
+//   align-items: center;
+// }
+
+.at-tag--active {
+  background-color: #fff6e6;
+  color: #fda308;
+  border: 0;
+  margin-bottom: -5px;
+}
+
+// .my-user-info .hearder,
+// .texts {
+//   display: inline-block;
+// }
+
+// .texts {
+//   letter-spacing: 2px;
+//   margin-left: 30px;
+//   margin-top: 5px;
+// }
+
+.my-user-order-card {
+  margin-top: 3%;
+  position: relative;
+}
+
+.at-card__header-title {
+  font-size: 31px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.at-card__header-extra {
+  color: #999999;
+  font-size: 24px;
+}
+
+.at-tab-bar {
+  width: 103%;
+  background-color: transparent;
+  transform: translateX(-3%);
+}
+
+.at-tab-bar__inner-img {
+  margin-bottom: 15px;
+}
+
+.at-card__content {
+  padding: 0 0 16px 0;
+}
+
+.at-tab-bar__title {
+  font-size: 26px;
+  color: #333333;
+  letter-spacing: 1px;
+}
+
+.at-tab-bar__item {
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.at-tab-bar__item--active {
+  color: #333333;
+}
+
+.my-List-card-box {
+  height: 100vh;
+  width: 94%;
+  background-color: white;
+  margin: 3% 3%;
+}
+
+.my .at-list__item-thumb {
+  width: 48px;
+  height: 48px;
+}
+
+.my .item-content__info-title {
+  font-size: 28px;
+}
+
+.at-list__item {
+  padding: 32px 30px;
+}
+
+.my .at-tab-bar__inner-img {
+  height: 48px;
+  width: 46px;
+}

@@ -1,0 +1,21 @@
+<block wx:if="{{$taroCompReady}}">
+    <view>
+        <view class="good-info-item" wx:key="id" wx:for="{{loopArray32}}" wx:for-item="item" wx:for-index="index">
+            <view class="checkout-selected" bindtap="anonymousFunc0" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
+                <image src="{{item.$original.selectd ? selectedGood : allSelectDefalut}}" style="{{item.$loopState__temp2}}"></image>
+            </view>
+            <image class="goods-Img" style="{{'background:url(' + moren + ');background-size: 55%;background-position: center;background-repeat: no-repeat;'}}" src="{{item.$original.picUrl}}"></image>
+            <view class="goods-props">
+                <view class="title">{{item.$original.productName}}</view>
+                <view class="props">
+                    <view class="price">￥{{item.$original.salePrice}}</view>
+                    <view class="swicth">
+                        <image mode="scaleToFill" bindtap="anonymousFunc1" style="{{(item.$original.saleNum ? '' : 'display: none;') + 'width: 23px;height: 23px;background: #fff;vertical-align: sub;'}}" src="{{subIcon}}" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey2}}"></image>
+                        <input maxlength="3" value="{{item.$original.saleNum}}" type="number" disabled="{{true}}" class="goodsCarNum" />
+                        <image mode="aspectFill" bindtap="anonymousFunc2" style="width: 23px;height: 23px;background: #fff;vertical-align: sub;" src="{{addIcon}}" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey3}}"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>

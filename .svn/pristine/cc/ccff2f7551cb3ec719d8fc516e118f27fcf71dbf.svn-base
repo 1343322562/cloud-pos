@@ -1,0 +1,7 @@
+import request from "./service";
+
+export default {
+  Users: {
+    getUserData: (obj = {}) => request.get('/api/v1/lists', obj) // 获取用户数据
+  }
+};

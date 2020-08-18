@@ -1,0 +1,41 @@
+import Nerv from "nervjs";
+import Taro from "@tarojs/taro-h5";
+import { View, Text } from '@tarojs/components';
+
+export default class Orderlistcard extends Taro.Component {
+
+  // 定义 addGlobalClass 外部样式可以影响组件
+  static options = {
+    addGlobalClass: true
+  };
+
+  componentWillMount() {}
+
+  componentDidMount() {}
+
+  componentWillUnmount() {}
+
+  componentDidShow() {}
+
+  componentDidHide() {}
+
+  render() {
+    return <View className="orderListCard">
+        <View className="order-line order-top">
+          <Text className="orderNo">
+            <Text className="sign" />
+            <Text className="text">订单号: {this.props.orderInfo.orderNo}</Text>
+          </Text>
+          <View className="orderDate">
+            <View className="dateInfo">{this.props.orderInfo.orderDate}</View>
+            <View className="dateInfo">{this.props.orderInfo.orderTime}</View>
+          </View>
+        </View>
+        <View style={`display: ${this.props.isShowBottom || 'flex'};`} className="order-line order-bottom">
+          <Text className="orderState orderPayInfo">{this.props.orderInfo.orderState}</Text>
+          <Text>{this.props.orderInfo.allGoodsNum}</Text>
+          <Text className="orderPrice orderPayInfo">￥{this.props.orderInfo.orderPrice}</Text>
+        </View>
+      </View>;
+  }
+}

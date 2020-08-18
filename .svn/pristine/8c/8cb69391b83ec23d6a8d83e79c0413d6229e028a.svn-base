@@ -1,0 +1,92 @@
+import Nerv from "nervjs";
+import Taro, { getMenuButtonBoundingClientRect as _getMenuButtonBoundingClientRect } from "@tarojs/taro-h5";
+import { View, Image } from '@tarojs/components';
+import './orderDetail.scss';
+import { AtList, AtListItem, AtSearchBar } from 'taro-ui'; // 搜索框
+
+import VNavbar from "../../components/navbar/navbar"; // 导航栏
+
+import Orderlistcard from "../../components/orderlistcard/orderlistcard"; // 订单卡片(信息)
+import { IS_H5_ENV, IS_WEAPP_ENV } from "../../tool/main";
+
+export default class Orderdetail extends Taro.Component {
+  state = {
+    orderInfo: {
+      orderNo: 123452147896,
+      orderState: '已完成',
+      allGoodsNum: '共 419 件商品',
+      orderPrice: 500.02,
+      orderDate: '2020-06-10',
+      orderTime: '16:01:06'
+    },
+    topBoinding: '' // 胶囊距离顶部位置
+  };
+  static options = {
+    addGlobalClass: true
+  };
+
+  componentWillMount() {
+    let topBoinding;
+    if (IS_WEAPP_ENV) {
+      // 微信端 胶囊距离顶部位置
+      topBoinding = _getMenuButtonBoundingClientRect().top;
+    }
+    console.log(topBoinding);
+    this.setState({ topBoinding });
+  }
+
+  componentDidMount() {}
+
+  componentWillUnmount() {}
+
+  componentDidShow() {}
+
+  componentDidHide() {}
+
+  config = {
+    navigationBarTitleText: '订单详情/状态',
+    navigationStyle: 'custom',
+    navigationBarBackgroundColor: '#fec10d'
+  };
+
+  render() {
+    console.log(IS_H5_ENV);
+    const Navbar = IS_H5_ENV ? <VNavbar color="#333333" isShowCustomtTitle="flex" fixed={true} /> : <VNavbar color="#333333" top={this.state.topBoinding} rightFirstIconType={false} isShowCustomtTitle="flex" fixed={true} />;
+    return <View className="orderDetail">
+        <View style="height: 60px;width: 100%;" />
+        {Navbar}
+
+        {/* 订单信息区域 */}
+        <AtSearchBar actionName="搜一下" placeholder="请输入订单号" value={this.state.value} onClear={() => this.onClear()} onChange={val => this.onChange(val)} onActionClick={encodeURIComponent => this.onActionClick(encodeURIComponent)} />
+        <Orderlistcard orderInfo={this.state.orderInfo} isShowBottom="none" />
+        <AtList className="order-info-list">
+          <AtListItem title={`订单状态: ${'已提交'}`} extraText={'微信支付'} />
+          <AtListItem title={'每日优鲜(赵丽路店)'} extraText={'400-119-8099'} />
+        </AtList>
+
+        <View className="info-box">
+          <View className="title">付款信息</View>
+          <AtList className="order-info-list payment">
+            <AtListItem title={'商品总价'} extraText={'￥100.00'} />
+            <AtListItem title={'商品总价'} extraText={'￥100.00'} />
+          </AtList>
+        </View>
+
+        <View className="info-box">
+          <View className="title">付款信息</View>
+          <View className="goods-box">
+            <Image className="goods-img" mode="aspectFill" onClick={e => this.props.onEditClick(e)} style="" src="https://pic2.zhimg.com/80/v2-0a80487d102fa8f4323279779e7ee940_720w.jpg" />
+            {/* 组件在小程序中的层级不一样，需要套一个view */}
+            <View style="flex: 1;">
+              <AtList className="order-info-list payment good" style="width: 80%;">
+                <AtListItem title={'商品标题'} extraText={'￥0.82/袋'} />
+                <AtListItem title={'规格：32g'} extraText={'小计：￥100.00'} />
+                <AtListItem title={'配送数量：10'} extraText={'￥100.00'} />
+              </AtList>
+            </View>
+            
+          </View>
+        </View>
+      </View>;
+  }
+}

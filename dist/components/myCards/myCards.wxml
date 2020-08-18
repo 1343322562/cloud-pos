@@ -1,0 +1,12 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="myCards">
+        <view class="my-header-card-box">
+            <card-view compid="{{$compid__231}}"></card-view>
+        </view>
+        <view class="my-List-card-box">
+            <at-list>
+                <at-list-item compid="{{$compid__232}}"></at-list-item>
+            </at-list>
+        </view>
+    </view>
+</block>

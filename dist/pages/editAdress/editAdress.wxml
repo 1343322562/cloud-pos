@@ -1,0 +1,11 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="editAdress custom">
+        <block wx:if="{{IS_H5_ENV}}">
+            <v-navbar compid="{{$compid__202}}"></v-navbar>
+        </block>
+        <at-form compid="{{$compid__203}}">
+            <v-adress-input compid="{{$compid__204}}"></v-adress-input>
+            <at-button compid="{{$compid__205}}">保存</at-button>
+        </at-form>
+    </view>
+</block>

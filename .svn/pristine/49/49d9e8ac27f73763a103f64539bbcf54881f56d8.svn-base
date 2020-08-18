@@ -1,0 +1,45 @@
+import Nerv from "nervjs";
+import Taro from "@tarojs/taro-h5";
+import { View, Input, Image } from '@tarojs/components';
+
+import { AtIcon } from "taro-ui";
+// 导入图片
+
+import addIcon from '../../../public/images/addIcon.png';
+import subIcon from '../../../public/images/subIcon.png';
+
+export default class Goodscaritem extends Taro.Component {
+
+  // 定义 addGlobalClass 外部样式可以影响组件
+  static options = {
+    addGlobalClass: true
+  };
+
+  componentWillMount() {}
+
+  componentDidMount() {}
+
+  componentWillUnmount() {}
+
+  componentDidShow() {}
+
+  componentDidHide() {}
+
+  render() {
+    return <View className="good-info-item">
+            <AtIcon className="checkout-selected" value="check-circle" size="25" color="#ddd" />
+            <Image className="goods-Img" src={this.props.goodImgUrl} />
+            <View className="goods-props">
+              <View className="title">{this.props.goodName}</View>
+              <View className="props">
+                <View className="price">￥{this.props.price}</View>
+                <View className="swicth">
+                  <Image mode="aspectFill" onClick={e => this.props.onSubGoodNumClick(e)} style="width: 21px;height: 21px;background: #fff;vertical-align: sub;" src={subIcon} />
+                  <Input maxLength="3" value="" type="number" className="goodsCarNum"></Input>
+                  <Image mode="aspectFill" onClick={e => this.props.onSubGoodNumClick(e)} style="width: 21px;height: 21px;background: #fff;vertical-align: sub;" src={addIcon} />
+                </View>
+              </View>
+            </View>
+          </View>;
+  }
+}

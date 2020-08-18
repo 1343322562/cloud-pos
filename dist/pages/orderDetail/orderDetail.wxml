@@ -1,0 +1,31 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="orderDetail">
+        <orderlistcard compid="{{$compid__195}}"></orderlistcard>
+        <at-list compid="{{$compid__196}}">
+            <at-list-item compid="{{$compid__197}}"></at-list-item>
+            <at-list-item compid="{{$compid__198}}"></at-list-item>
+        </at-list>
+        <view class="info-box">
+            <view class="title">付款信息</view>
+            <at-list compid="{{$compid__199}}">
+                <at-list-item compid="{{$compid__200}}"></at-list-item>
+                <at-list-item compid="{{$compid__201}}"></at-list-item>
+            </at-list>
+        </view>
+        <view class="info-box">
+            <view class="title">商品详情</view>
+            <block wx:if="{{orderData.length}}">
+                <view wx:key="productId" class="goods-box" wx:for="{{loopArray28}}" wx:for-item="item" wx:for-index="index">
+                    <image class="goods-img" mode="scaleToFill" src="{{item.$original.picDomain + item.$original.picUrl}}" bindtap="anonymousFunc0" style="{{'background:url(' + moren + ');background-size: 55%;background-position: center;background-repeat: no-repeat;'}}" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"></image>
+                    <view style="flex: 1;">
+                        <at-list compid="{{item.$compid__191}}">
+                            <at-list-item compid="{{item.$compid__192}}"></at-list-item>
+                            <at-list-item compid="{{item.$compid__193}}"></at-list-item>
+                            <at-list-item compid="{{item.$compid__194}}"></at-list-item>
+                        </at-list>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+</block>

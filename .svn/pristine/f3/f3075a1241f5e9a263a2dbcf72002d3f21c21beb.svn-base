@@ -1,0 +1,34 @@
+import Taro, { showToast as _showToast, showLoading as _showLoading, hideLoading as _hideLoading } from "@tarojs/taro-h5";
+export const toast = function (title, duration = 1500, icon = 'none') {
+  _showToast({
+    title: title,
+    icon: icon,
+    duration: duration
+  });
+};
+
+export const loading = function (isShow, title = '加载中. . .') {
+  if (isShow) {
+    _showLoading({
+      title: title
+    });
+  } else {
+    _hideLoading();
+  }
+};
+
+export const pageBack = function (backNum) {
+  return Taro.navigateBack({
+    delta: backNum
+  });
+};
+
+export const goPage = function (url) {
+  return Taro.navigateTo({
+    url: url
+  });
+};
+
+// 判断当前环境
+export const IS_WEAPP_ENV = false;
+export const IS_H5_ENV = true;

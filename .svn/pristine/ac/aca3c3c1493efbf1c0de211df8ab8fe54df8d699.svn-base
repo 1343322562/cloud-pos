@@ -1,0 +1,27 @@
+import Nerv from "nervjs";
+import Taro from "@tarojs/taro-h5";
+import { View } from '@tarojs/components';
+import './headerBG.scss';
+import { IS_H5_ENV } from "../../tool/main";
+
+export default class headerBG extends Taro.Component {
+  state = {};
+  static defaultProps = {
+    isEnable: true
+  };
+
+  componentWillMount() {}
+
+  componentDidMount() {}
+
+  componentWillUnmount() {}
+
+  componentDidShow() {}
+
+  componentDidHide() {}
+
+  render() {
+    let headerBG = IS_H5_ENV ? 'h5-top-bg' : 'we-top-bg';
+    return <View className={this.props.headerProps || headerBG} />;
+  }
+}

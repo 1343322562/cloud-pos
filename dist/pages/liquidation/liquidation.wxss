@@ -1,0 +1,237 @@
+.liquidation {
+  background-color: #f5f5f5;
+  color: #333333;
+  font-size: 30rpx;
+  min-height: 108vh;
+  padding-bottom: 200rpx;
+}
+.top-bg {
+  height: 290rpx;
+  width: 100%;
+  background: linear-gradient(to bottom, #ffaf11, #feca0a);
+}
+.we-top-bg {
+  height: 100rpx;
+}
+.li-adress-card-box,
+.pay-res-box,
+.pay-way,
+.order-note,
+.order-price {
+  background-color: #ffffff;
+  border-radius: 20rpx;
+  width: 95%;
+  margin: -190rpx 2.5% 0;
+  padding: 35rpx 0 40rpx 33rpx;
+  box-sizing: border-box;
+}
+.li-adress-card-box .li-adress,
+.pay-res-box .li-adress,
+.pay-way .li-adress,
+.order-note .li-adress,
+.order-price .li-adress {
+  border-bottom: 1PX solid #eee;
+  padding-right: 33rpx;
+}
+.li-adress-card-box .li-adress .title,
+.pay-res-box .li-adress .title,
+.pay-way .li-adress .title,
+.order-note .li-adress .title,
+.order-price .li-adress .title {
+  font-size: 27rpx;
+  color: #666666;
+}
+.li-adress-card-box .li-adress .adress-box,
+.pay-res-box .li-adress .adress-box,
+.pay-way .li-adress .adress-box,
+.order-note .li-adress .adress-box,
+.order-price .li-adress .adress-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.li-adress-card-box .li-adress .adress-box .detail,
+.pay-res-box .li-adress .adress-box .detail,
+.pay-way .li-adress .adress-box .detail,
+.order-note .li-adress .adress-box .detail,
+.order-price .li-adress .adress-box .detail {
+  padding: 7rpx 0 30rpx;
+}
+.li-adress-card-box .li-adress .adress-box .detail .content,
+.pay-res-box .li-adress .adress-box .detail .content,
+.pay-way .li-adress .adress-box .detail .content,
+.order-note .li-adress .adress-box .detail .content,
+.order-price .li-adress .adress-box .detail .content {
+  font-size: 36rpx;
+  font-weight: bold;
+  line-height: 72rpx;
+}
+.li-adress-card-box .li-adress .adress-box .detail .user-info,
+.pay-res-box .li-adress .adress-box .detail .user-info,
+.pay-way .li-adress .adress-box .detail .user-info,
+.order-note .li-adress .adress-box .detail .user-info,
+.order-price .li-adress .adress-box .detail .user-info {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.li-adress-card-box .li-adress .adress-box .detail .user-info .phone,
+.pay-res-box .li-adress .adress-box .detail .user-info .phone,
+.pay-way .li-adress .adress-box .detail .user-info .phone,
+.order-note .li-adress .adress-box .detail .user-info .phone,
+.order-price .li-adress .adress-box .detail .user-info .phone {
+  margin-left: 40rpx;
+}
+.li-adress-card-box .li-transport-way,
+.pay-res-box .li-transport-way,
+.pay-way .li-transport-way,
+.order-note .li-transport-way,
+.order-price .li-transport-way {
+  display: flex;
+  justify-content: space-between;
+  font-size: 28.4rpx;
+  padding: 0 30rpx 0 0;
+}
+.li-adress-card-box .li-transport-way .title,
+.pay-res-box .li-transport-way .title,
+.pay-way .li-transport-way .title,
+.order-note .li-transport-way .title,
+.order-price .li-transport-way .title {
+  font-weight: bold;
+}
+.li-adress-card-box .li-transport-way .way,
+.pay-res-box .li-transport-way .way,
+.pay-way .li-transport-way .way,
+.order-note .li-transport-way .way,
+.order-price .li-transport-way .way {
+  color: #333333;
+}
+.li-adress-card-box .li-transport-way .way .text,
+.pay-res-box .li-transport-way .way .text,
+.pay-way .li-transport-way .way .text,
+.order-note .li-transport-way .way .text,
+.order-price .li-transport-way .way .text {
+  padding-right: 10rpx;
+}
+.pay-res-box {
+  margin-top: -70rpx;
+  padding-bottom: 30rpx;
+  border-radius: 5rpx;
+}
+.pay-res-box .contact {
+  background-color: #f1f1f1;
+  color: #333333;
+  font-size: 22rpx;
+  margin: 35rpx auto 0;
+  border-radius: 25rpx;
+  width: 170rpx;
+  text-align: center;
+  padding: 7rpx 10rpx;
+}
+.pay-res-box .shop-title {
+  border-bottom: 1PX solid #eee;
+  padding-right: 33rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 0 22rpx;
+}
+.pay-res-box .shop-title .title {
+  font-weight: bold;
+  margin-left: 16rpx;
+  font-size: 29rpx;
+}
+.pay-res-box .goods-detail {
+  padding: 28rpx 0 0;
+}
+.pay-res-box .goods-detail .goods-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5rpx dashed #eee;
+}
+.pay-res-box .goods-detail .goods-item .detail {
+  flex: 1;
+  height: 130rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 35rpx;
+  font-size: 28rpx;
+}
+.pay-res-box .goods-detail .goods-item .detail .name {
+  color: #666666;
+}
+.pay-res-box .goods-detail .goods-item .detail .props {
+  display: flex;
+  justify-content: space-between;
+  color: #333333;
+  margin-right: 45rpx;
+}
+.pay-way, .order-price {
+  margin-top: 0;
+  border-top: 2rpx solid #eee;
+  display: flex;
+  justify-content: space-between;
+  padding: 35rpx 45rpx;
+  font-size: 29rpx;
+}
+.pay-way .title, .order-price .title {
+  font-weight: bold;
+}
+.pay-way .way, .order-price .way {
+  color: #f24800;
+}
+.order-note {
+  font-size: 29rpx;
+  margin-top: 0;
+  border-top: 2rpx solid #eee;
+  display: flex;
+  align-items: center;
+  padding: 35rpx 45rpx;
+}
+.order-note .title {
+  font-weight: bold;
+  width: 150rpx;
+}
+.order-note .note {
+  font-size: 27rpx;
+  padding-left: 10rpx;
+}
+.order-price {
+  padding: 35rpx 45rpx;
+  font-size: 23rpx;
+  color: #333333;
+}
+.order-price .info {
+  color: #999999;
+}
+.order-price .content .all-price {
+  font-size: 34rpx;
+  color: #003433;
+  font-weight: bold;
+}
+.pay-bottom {
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  padding: 30rpx 4%;
+  width: 92%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #333333;
+  font-size: 27rpx;
+}
+.pay-bottom .price-info .price {
+  font-size: 34rpx;
+  color: #fe680a;
+  font-weight: bold;
+}
+.pay-bottom .btn {
+  margin: 0;
+  border-radius: 50rpx;
+  height: 68rpx;
+  line-height: 66rpx;
+  font-size: 30rpx;
+  margin-left: 30rpx;
+  letter-spacing: 2rpx;
+}

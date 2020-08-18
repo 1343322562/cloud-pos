@@ -1,0 +1,69 @@
+.editadress-btn{
+    height: 75px;
+    line-height: 75px;
+    width: 520px;
+    margin: 100px auto;
+}
+
+.custom .at-form::after {
+    border-width: 0;
+}
+
+.custom .at-input__title {
+  font-size: 28px;
+  color: #666666;
+}
+
+.at-button__text{
+  font-weight: bold;
+  color: #333333;
+}
+
+.custom .at-input__input {
+  font-size: 29px;
+  color: #333333;
+}
+
+// .custom .editadress-tag-box{
+//   position: absolute;
+//   top: 65.5%;
+//   width: 346px;
+//   left: 224px;
+//   display: flex;
+//   justify-content: space-around;
+//   z-index: 3000;
+// }
+
+.at-input__children{
+  z-index: 3000;
+  position: absolute;
+  left: 180px;
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+}
+
+.at-input {
+  margin:auto 35px;
+  border-bottom: 1PX solid #f1f1f1;
+}
+
+
+.at-input::after {
+  border-width: 0;
+}
+
+.custom .at-tag--small {
+  height: 38px;
+  line-height: 36px;
+  font-size: 22px;
+  color: #333333;
+  background-color: #fff;
+  border: 1px solid #999999;
+}
+
+.custom .at-tag--active{
+  color: #f24800;
+  background-color: #fadacc;
+  border: 1px solid #fadacc;
+}

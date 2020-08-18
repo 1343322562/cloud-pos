@@ -1,0 +1,8 @@
+<block wx:if="{{$taroCompReady}}">
+    <at-nav-bar compid="{{$compid__221}}">
+        <view style="{{'display: ' + (isShowCustomtTitle || 'none') + ';margin-top: ' + (top || null) + 'px;margin-bottom:' + (top ? 8 : 0) + 'px;'}}" class="switch-center" bindtap="anonymousFunc2">
+            <view class="{{'title left ' + (actTitle == 1 ? 'act-title' : '')}}">订单详情</view>
+            <view class="{{'title right ' + (actTitle == 2 ? 'act-title' : '')}}">订单状态</view>
+        </view>
+    </at-nav-bar>
+</block>

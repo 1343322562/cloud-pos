@@ -1,0 +1,39 @@
+<template name="renderGetGoodCarAdressCard">
+    <block>
+        <view class="car-edit-adress-box">
+            <at-list compid="{{$compid__206}}">
+                <at-list-item compid="{{$compid__207}}"></at-list-item>
+            </at-list>
+        </view>
+    </block>
+</template>
+<template name="renderGetGoodCarResCard">
+    <block>
+        <view class="res-info-box">
+            <view class="res-info">
+                <view class="selected-all" bindtap="anonymousFunc0">
+                    <image src="{{allSelect ? selectedGood : allSelectDefalut}}" style="{{anonymousState__temp2}}"></image><text style="white-space: nowrap;">全选</text>
+                </view>
+                <view class="price-info">
+                    <view class="after">合计: <text class="span">￥{{settlementData.amt}}</text>
+                    </view>
+                </view>
+            </view>
+            <at-button compid="{{$compid__208}}">结算({{settlementData.num}})</at-button>
+            <image bindtap="anonymousFunc2" class="goods-delete" src="{{deleteGood}}"></image>
+        </view>
+    </block>
+</template>
+<block wx:if="{{$taroCompReady}}">
+    <view class="goodsCar">
+        <view class="{{'car-top-bg ' + headerBG}}"></view>
+        <block wx:if="{{!IS_WEAPP_ENV}}">
+            <v-navbar compid="{{$compid__209}}"></v-navbar>
+        </block>
+        <template is="renderGetGoodCarAdressCard" data="{{...anonymousState__temp3}}"></template>
+        <view class="goods-car-detail-box">
+            <goods-car-item compid="{{$compid__210}}"></goods-car-item>
+            <template is="renderGetGoodCarResCard" data="{{...anonymousState__temp4}}"></template>
+        </view>
+    </view>
+</block>

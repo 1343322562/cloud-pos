@@ -1,0 +1,153 @@
+import Taro, { Component } from "@tarojs/taro-h5";
+
+import './custom-variables.scss';
+import './app.scss';
+
+// 如果需要在 h5 环境中开启 React Devtools
+// 取消以下注释：
+// if (process.env.NODE_ENV !== 'production' && process.env.TARO_ENV === 'h5')  {
+//   require('nerv-devtools')
+// }
+
+import Nerv from 'nervjs';
+import { View, Tabbar, TabbarContainer, TabbarPanel } from '@tarojs/components';
+import { Router, createHistory, mountApis } from '@tarojs/router';
+Taro.initPxTransform({
+  "designWidth": 750,
+  "deviceRatio": {
+    "640": 1.17,
+    "750": 1,
+    "828": 0.905
+  }
+});
+
+const _taroHistory = createHistory({
+  mode: "hash",
+  basename: "/",
+  customRoutes: {},
+  firstPagePath: "/pages/index/index"
+});
+
+mountApis({
+  "basename": "/",
+  "customRoutes": {}
+}, _taroHistory);
+class App extends Component {
+  state = {
+    __tabs: {
+      list: [{
+        pagePath: "/pages/index/index",
+        text: "首页",
+        iconPath: require("././static/home.png"),
+        selectedIconPath: require("././static/homeActive.png")
+      }, {
+        pagePath: "/pages/goodsCar/goodsCar",
+        text: "购物车",
+        iconPath: require("././static/shopCar.png"),
+        selectedIconPath: require("././static/shopCarActive.png")
+      }, {
+        pagePath: "/pages/my/my",
+        text: "我的",
+        iconPath: require("././static/my.png"),
+        selectedIconPath: require("././static/my.png")
+      }],
+      color: "#666",
+      selectedColor: "#d81e06",
+      backgroundColor: "#fafafa",
+      borderStyle: "black",
+      mode: "hash",
+      basename: "/",
+      customRoutes: {}
+    }
+  };
+
+
+  componentDidMount() {
+    this.componentDidShow();
+  }
+
+  componentDidShow() {}
+
+  componentDidHide() {}
+
+  componentDidCatchError() {}
+
+  config = {
+    pages: ["/pages/index/index", "/pages/my/my", "/pages/editAdress/editAdress", "/pages/orderList/orderList", "/pages/shopDetail/shopDetail", "/pages/goodsCar/goodsCar", "/pages/liquidation/liquidation", "/pages/orderDetail/orderDetail", "/pages/selectAdress/selectAdress"],
+    window: {
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#fff',
+      navigationBarTitleText: 'WeChat',
+      navigationBarTextStyle: 'black'
+    },
+    tabBar: { list: [{ pagePath: "/pages/index/index", text: "首页", iconPath: require("././static/home.png"), selectedIconPath: require("././static/homeActive.png") }, { pagePath: "/pages/goodsCar/goodsCar", text: "购物车", iconPath: require("././static/shopCar.png"), selectedIconPath: require("././static/shopCarActive.png") }, { pagePath: "/pages/my/my", text: "我的", iconPath: require("././static/my.png"), selectedIconPath: require("././static/my.png") }], color: "#666", selectedColor: "#d81e06", backgroundColor: "#fafafa", borderStyle: "black", mode: "hash",
+      basename: "/",
+      customRoutes: {}
+    }
+
+    // 在 App 类中的 render() 函数没有实际作用
+    // 请勿修改此函数
+  };render() {
+    return <TabbarContainer>
+          
+        <TabbarPanel>
+          
+                <Router mode={"hash"} history={_taroHistory} routes={[{
+          path: '/pages/index/index',
+          componentLoader: () => import( /* webpackChunkName: "index_index" */'./pages/index/index'),
+          isIndex: true
+        }, {
+          path: '/pages/my/my',
+          componentLoader: () => import( /* webpackChunkName: "my_my" */'./pages/my/my'),
+          isIndex: false
+        }, {
+          path: '/pages/editAdress/editAdress',
+          componentLoader: () => import( /* webpackChunkName: "editAdress_editAdress" */'./pages/editAdress/editAdress'),
+          isIndex: false
+        }, {
+          path: '/pages/orderList/orderList',
+          componentLoader: () => import( /* webpackChunkName: "orderList_orderList" */'./pages/orderList/orderList'),
+          isIndex: false
+        }, {
+          path: '/pages/shopDetail/shopDetail',
+          componentLoader: () => import( /* webpackChunkName: "shopDetail_shopDetail" */'./pages/shopDetail/shopDetail'),
+          isIndex: false
+        }, {
+          path: '/pages/goodsCar/goodsCar',
+          componentLoader: () => import( /* webpackChunkName: "goodsCar_goodsCar" */'./pages/goodsCar/goodsCar'),
+          isIndex: false
+        }, {
+          path: '/pages/liquidation/liquidation',
+          componentLoader: () => import( /* webpackChunkName: "liquidation_liquidation" */'./pages/liquidation/liquidation'),
+          isIndex: false
+        }, {
+          path: '/pages/orderDetail/orderDetail',
+          componentLoader: () => import( /* webpackChunkName: "orderDetail_orderDetail" */'./pages/orderDetail/orderDetail'),
+          isIndex: false
+        }, {
+          path: '/pages/selectAdress/selectAdress',
+          componentLoader: () => import( /* webpackChunkName: "selectAdress_selectAdress" */'./pages/selectAdress/selectAdress'),
+          isIndex: false
+        }]} tabBar={this.state.__tabs} customRoutes={{}} />
+                
+        </TabbarPanel>
+        <Tabbar conf={this.state.__tabs} homePage="pages/index/index" />
+        </TabbarContainer>;
+  }
+
+  componentWillUnmount() {
+    this.componentDidHide();
+  }
+
+  constructor(props, context) {
+    super(props, context);
+    Taro._$app = this;
+  }
+
+  componentWillMount() {
+    Taro.initTabBarApis(this, Taro);
+  }
+
+}
+
+Nerv.render(<App />, document.getElementById('app'));

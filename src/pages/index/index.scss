@@ -1,0 +1,110 @@
+.index {
+  font-size: 28px;
+  color: #333333;
+}
+
+.index-weapp {
+  .ind-selectAdress {
+    top: 40px;
+  }
+  
+  .ind-shopCard-container {
+    top: 50px;
+  }
+}
+
+
+.ind-selectAdress {
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  padding: 25px 0 0 25px;
+  height: 70px;
+  box-sizing: border-box;
+
+  .ind-adress-sign {
+    font-size: 24px;
+  }
+
+  .ind-adress-icon {
+    vertical-align: text-top;
+    transition: transform;
+  }
+
+  .ind-adress-icon-rotate {
+    transform: rotateX(180deg);
+  }
+}
+
+
+
+.ind-shopCard-container {
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  margin-top: 90px;
+  display: flex;
+  justify-content: center;
+
+  .center {
+    width: 740px;
+    max-width: 750px;
+
+    .shopCard:nth-of-type(odd) {
+      margin-left: 25px;
+      float: left;
+    }
+
+    .shopCard:nth-of-type(even) {
+      margin-right: 25px;
+      float: right;
+    }
+
+    .shopCard {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 406px;
+      width: 332px;
+      min-width: 200px;
+      max-width: 500px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      border-radius: 25px;
+      box-shadow: 1px 6px 16px #ddd;
+      background-color: #fff;
+
+      .shpo-pic {
+        display: block;
+      }
+
+      .shop-name {
+        font-size: 34px;
+        font-weight: bold;
+        margin-top: 15px;
+        margin-bottom: 5px;
+      }
+
+      .shop-distence {
+        margin: 14px 0 10px;
+        color: #666666;
+        font-size: 26px;
+
+        .icons {
+          vertical-align: baseline;
+        }
+      }
+
+      .shop-enter {
+        margin-top: 20px;
+        line-height: 49px;
+        height: 48px;
+        width: 155px;
+        text-align: center;
+        border-radius: 40px;
+        background-color: #ffb910;
+      }
+    }
+  }
+}

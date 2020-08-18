@@ -1,0 +1,90 @@
+import Nerv from "nervjs";
+import Taro from "@tarojs/taro-h5";
+import { View, Text, Image, Input } from '@tarojs/components';
+import './liquidation.scss';
+import VNavbar from "../../components/navbar/navbar"; // 导航栏
+import { AtButton } from "taro-ui";
+import { IS_WEAPP_ENV } from "../../tool/main";
+import Card from "./card/card";
+import asd from '../../../public/images/asd.jpg';
+
+// 导入图片
+
+// import shopImg from 'https://pic2.zhimg.com/80/v2-0a80487d102fa8f4323279779e7ee940_720w.jpg'
+
+export default class Liquidation extends Taro.Component {
+
+  componentWillMount() {}
+
+  componentDidMount() {}
+
+  componentWillUnmount() {}
+
+  componentDidShow() {}
+
+  componentDidHide() {}
+
+  config = {
+    navigationBarTitleText: '订单确认',
+    navigationBarBackgroundColor: '#ffaf11'
+  };
+
+  render() {
+    // 导航栏
+    let Navbar = IS_WEAPP_ENV ? null : <VNavbar bg="transparent" text="订单确认" fixed="true" rightFirstIcon={true} />;
+    // 微信端时的头部背景
+    let headerBG = IS_WEAPP_ENV ? 'we-top-bg' : null;
+    return <View className="liquidation">
+        {Navbar}
+        {/* 背景 */}
+        <View className={'top-bg ' + headerBG} />
+
+
+        {/* 地址卡片 */}
+        <Card adressTitle="北京市北京城区通州区通州区76" userName="任利兵" userPhone="13855684458" onSubGoodNumClick={() => this.onEditClick()} />
+
+        {/* 结算卡片 */}
+        <View className="pay-res-box">
+          <View className="shop-title">
+            <Image mode="aspectFill" onClick={e => this.props.onEditClick(e)} style="border-radius: 50%;width: 36px;height: 36px;background: #999999;vertical-align: sub;" src="https://pic2.zhimg.com/80/v2-0a80487d102fa8f4323279779e7ee940_720w.jpg" />
+            <Text className="title">每日优鲜(赵黎路店)</Text>
+          </View>
+          <View className="goods-detail">
+            <View className="goods-item">
+              <Image mode="aspectFill" onClick={e => this.props.onEditClick(e)} style="width: 75px;height: 75px;vertical-align: sub;" src={asd} />
+              <View className="detail">
+                <View className="name">光明纯牛奶250ml*24盒</View>
+                <View className="props">
+                  <Text>$21.90</Text>
+                  <Text>x1</Text>
+                </View>
+              </View>
+            </View>
+            <View className="contact">共一件/6.0kg</View>
+          </View>
+        </View>
+
+        <View className="pay-way">
+          <Text className="title">支付方式</Text>
+          <Text className="way">微信支付</Text>
+        </View>
+
+        <View className="order-note">
+          <Text className="title">订单备注</Text>
+          <Input className="note" type="text" placeholder="填写安全存放地址,请按门铃等配送相关要求" />
+        </View>
+
+        <View className="order-price">
+          <Text className="info">188元起送,全场包邮</Text>
+          <Text className="content">小计: ￥<Text className="all-price">188.90</Text></Text>
+        </View>
+
+        {/* 总价区域 */}
+
+        <View className="pay-bottom">
+          <View className="price-info">应付款: <Text className="price">￥188.90</Text></View>
+          <AtButton className="btn" type="primary">确认下单</AtButton>
+        </View>
+      </View>;
+  }
+}

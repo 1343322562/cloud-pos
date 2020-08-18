@@ -1,0 +1,1 @@
+{"usingComponents":{"header-bg":"../../components/headerBG/headerBG","at-search-bar":"../../npm/taro-ui/dist/weapp/components/search-bar/index","card-view":"../../components/cardView/cardView"},"navigationBarTitleText":"首页","navigationBarBackgroundColor":"#fec10d","navigationStyle":"custom"}

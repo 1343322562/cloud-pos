@@ -1,0 +1,25 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="cardView">
+        <view class="cv-user-info-box">
+            <view class="cv-user-info">
+                <view style="{{anonymousState__temp}}">
+                    <at-avatar compid="{{$compid__220}}"></at-avatar>
+                </view>
+                <view class="texts">
+                    <view style="-webkit-box-orient: vertical;" class="{{InfoTitleClass + ' name'}}">{{title}}</view>
+                    <button class="auz-btn" style="{{anonymousState__temp2}}" open-type="getUserInfo" bindgetuserinfo="anonymousFunc0">点击授权/登录</button>
+                    <block>
+                        <block wx:if="{{infoType == 'Tag'}}">
+                            <at-tag compid="{{$compid__219}}">{{infoContent}}</at-tag>
+                        </block>
+                        <block wx:elif="{{infoType == 'Text'}}"><text style="-webkit-box-orient: vertical;" class="infoText">{{infoContent}}</text>
+                        </block>
+                    </block>
+                </view>
+            </view>
+            <view class="cv-rightImg-box">
+                <image bindtap="anonymousFunc1" style="{{anonymousState__temp3}}" src="{{rightImgUrl}}"></image><text class="text"><block><block wx:if="{{rightImgText}}">{{rightImgText}}</block><block wx:else><view></view></block></block></text>
+            </view>
+        </view>
+    </view>
+</block>

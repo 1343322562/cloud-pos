@@ -1,0 +1,13 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="editAdressFrom">
+        <at-input compid="{{$compid__222}}"></at-input>
+        <at-input compid="{{$compid__223}}"></at-input>
+        <at-input compid="{{$compid__224}}"></at-input>
+        <at-input compid="{{$compid__225}}"></at-input>
+        <at-input compid="{{$compid__226}}">
+            <at-tag compid="{{$compid__227}}">公司</at-tag>
+            <at-tag compid="{{$compid__228}}">家</at-tag>
+            <at-tag compid="{{$compid__229}}">学校</at-tag>
+        </at-input>
+    </view>
+</block>

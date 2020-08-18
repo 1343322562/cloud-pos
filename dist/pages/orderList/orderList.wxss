@@ -1,0 +1,83 @@
+.orderList {
+  background-color: #f5f5f5;
+  height: 100vh;
+  font-size: 28rpx;
+  color: #333333;
+}
+.fixed-height {
+  margin-top: 100rpx;
+  border-bottom-width: 10PX;
+}
+.fixed-height .at-search-bar__input-cnt {
+  border: 1rpx solid #aaa;
+  background-color: white;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 40rpx;
+}
+.fixed-height .weui-input {
+  margin-top: 2rpx;
+}
+.custom .at-search-bar__input-cnt {
+  border: 1rpx solid #aaa;
+  background-color: white;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 40rpx;
+}
+.custom .weui-input {
+  margin-top: 2rpx;
+}
+.at-search-bar::after {
+  border-width: 0;
+}
+.orderListCard {
+  margin-top: 12rpx;
+  background-color: #fff;
+  padding-top: 25rpx;
+}
+.orderListCard .order-top {
+  width: 96%;
+}
+.orderListCard .order-bottom {
+  margin-top: 5rpx;
+  margin-left: 30rpx;
+  padding: 3rpx 0;
+  width: 91%;
+}
+.orderListCard .order-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75rpx;
+}
+.orderListCard .order-line .orderNo {
+  display: inline-block;
+  height: 100%;
+}
+.orderListCard .order-line .orderNo .sign {
+  display: inline-block;
+  height: 100%;
+  width: 10rpx;
+  background-color: #ffb910;
+  float: left;
+  border-radius: 75rpx;
+  margin-right: 15rpx;
+}
+.orderListCard .order-line .orderNo .text {
+  display: inline-block;
+  line-height: 75rpx;
+}
+.orderListCard .order-line .orderDate {
+  font-size: 24rpx;
+  border-left: 1PX solid #ddd;
+  padding-left: 30rpx;
+  line-height: normal;
+  display: inline-block;
+}
+.orderListCard .order-line .orderDate .dateInfo {
+  text-align: center;
+}
+.orderListCard .order-line .orderPayInfo {
+  color: #ff0800;
+}

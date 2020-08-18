@@ -1,0 +1,62 @@
+<template name="renderSliderItemsSelected">
+    <block>
+        <view wx:for="{{loopArray30}}" wx:for-item="item" wx:for-index="index">
+            <view class="{{(clsOneIndex == index ? 'item-selected' : false) + ' menu-item1'}}" wx:key="index" bindtap="anonymousFunc0" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"><text class="item-text">{{item.$original.clsName}}</text>
+            </view>
+            <view class="menu-item2" wx:key="i" style="{{t.$loopState__temp2}}" bindtap="anonymousFunc1" wx:for="{{item.$anonymousCallee__4}}" wx:for-item="t" wx:for-index="i" data-e-tap-so="this" data-e-tap-a-a="{{t._$indexKey2}}">
+                <view class="{{'item-text' + (clsTwoIndex == i ? ' act' : '')}}">{{t.$original.clsName}}</view>
+            </view>
+        </view>
+    </block>
+</template>
+<template name="renderGoodCards">
+    <block>
+        <block>
+            <block wx:if="{{goodsData.length}}">
+                <view class="sd-good-cards-item" wx:key="index" wx:for="{{loopArray31}}" wx:for-item="item" wx:for-index="index">
+                    <image class="goodImg" mode="aspectFit" bindtap="anonymousFunc2" style="{{'padding: 15rpx;width: 85px;height: 85px;min-width: 85px;min-height: 85px;background:url(' + moren + ');background-size: 55%;background-position: center;background-repeat: no-repeat;'}}" src="{{item.$original.picDomain + item.$original.picUrl}}" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey3}}"></image>
+                    <view class="goodInfo">
+                        <view class="title" style="{{item.$loopState__temp4}}">{{item.$original.productName}}</view>
+                        <view class="price"><text class="new">￥{{item.$original.salePrice}}</text>
+                        </view>
+                        <view class="goodBottom">
+                            <view class="salesNum"></view>
+                            <view class="changeGoodsCar">
+                                <image mode="scaleToFill" bindtap="anonymousFunc3" style="{{(item.$original.saleNum ? '' : 'display: none;') + 'width: 23px;height: 23px;background: #fff;vertical-align: sub;'}}" src="{{subIcon}}" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey4}}"></image>
+                                <input disabled="{{true}}" maxlength="3" value="{{item.$original.saleNum || ''}}" type="number" class="goodsCarNum" />
+                                <image mode="aspectFill" mock-data="{{true}}" bindtap="anonymousFunc4" style="width: 23px;height: 23px;background: #fff;vertical-align: sub;" src="{{addIcon}}" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey5}}"></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <block wx:else>
+                <view style="margin: 80px;">
+                    <image mode="aspectFill" style="width: 123px;height: 123px;background: #fff;" src="{{notInfo}}"></image>
+                    <view class="none-default">此分类暂无商品~~~~</view>
+                </view>
+            </block>
+        </block>
+    </block>
+</template>
+<block wx:if="{{$taroCompReady}}">
+    <view class="{{topBar + ' shopDetail'}}">
+        <header-bg compid="{{$compid__216}}"></header-bg>
+        <view class="sd-seach-container" style="{{anonymousState__temp7}}">
+            <at-search-bar compid="{{$compid__217}}"></at-search-bar>
+        </view>
+        <view class="sd-shopCard-container">
+            <card-view compid="{{$compid__218}}"></card-view>
+        </view>
+        <view class="sd-shop-detail-container">
+            <view class="sd-good-menu-box">
+                <template is="renderSliderItemsSelected" data="{{...anonymousState__temp5}}"></template>
+            </view>
+            <view class="sd-good-detail-box">
+                <view class="sd-good-cards-box">
+                    <template is="renderGoodCards" data="{{...anonymousState__temp6}}"></template>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>

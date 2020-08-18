@@ -1,0 +1,85 @@
+.orderList {
+  background-color: #f5f5f5;
+  height: 100vh;
+  font-size: 28px;
+  color: #333333;
+}
+
+.fixed-height {
+  margin-top: 100px;
+  border-bottom-width: 10PX;
+}
+
+.fixed-height .at-search-bar__input-cnt {
+  border: 1px solid #aaa;
+  background-color: white;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 40px;
+}
+
+.fixed-height .weui-input {
+  margin-top: 2px;
+}
+
+.custom .at-search-bar__input-cnt {
+  border: 1px solid #aaa;
+  background-color: white;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 40px;
+}
+
+.custom .weui-input {
+  margin-top: 2px;
+}
+
+.at-search-bar::after {
+  border-width: 0;
+}
+
+.orderListCard {
+  margin-top: 12px;
+  background-color: #fff;
+  padding-top: 25px;
+
+  .order-top { width: 96%;}
+  .order-bottom {
+    margin-top: 5px;
+    margin-left: 30px;
+    padding: 3px 0;
+    width: 91%;
+  }
+  .order-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+
+    .orderNo {display: inline-block;height: 100%;
+
+      .sign {
+        display: inline-block;
+        height: 100%;
+        width: 10px;
+        background-color: rgb(255, 185, 16);
+        float: left;
+        border-radius: 75px;
+        margin-right: 15px;
+      }
+      .text {display: inline-block;line-height: 75px;}
+    }
+
+    .orderDate {
+      font-size: 24px;
+      border-left: 1PX solid #ddd;
+      padding-left: 30px;
+      line-height: normal;
+      display: inline-block;
+
+      .dateInfo {text-align: center;}
+    }
+
+    .orderPayInfo {color: #ff0800;}
+  }
+}

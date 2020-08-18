@@ -1,0 +1,92 @@
+.index {
+  font-size: 28rpx;
+  color: #333333;
+}
+.index-weapp .ind-selectAdress {
+  top: 40rpx;
+}
+.index-weapp .ind-shopCard-container {
+  top: 50rpx;
+}
+.ind-selectAdress {
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  padding: 25rpx 0 0 25rpx;
+  height: 70rpx;
+  box-sizing: border-box;
+}
+.ind-selectAdress .ind-adress-sign {
+  font-size: 24rpx;
+}
+.ind-selectAdress .ind-adress-icon {
+  vertical-align: text-top;
+  transition: -webkit-transform;
+  transition: transform;
+  transition: transform, -webkit-transform;
+}
+.ind-selectAdress .ind-adress-icon-rotate {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+.ind-shopCard-container {
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  margin-top: 90rpx;
+  display: flex;
+  justify-content: center;
+}
+.ind-shopCard-container .center {
+  width: 740rpx;
+  max-width: 750rpx;
+}
+.ind-shopCard-container .center .shopCard:nth-of-type(odd) {
+  margin-left: 25rpx;
+  float: left;
+}
+.ind-shopCard-container .center .shopCard:nth-of-type(even) {
+  margin-right: 25rpx;
+  float: right;
+}
+.ind-shopCard-container .center .shopCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 406rpx;
+  width: 332rpx;
+  min-width: 200rpx;
+  max-width: 500rpx;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+  border-radius: 25rpx;
+  box-shadow: 1rpx 6rpx 16rpx #ddd;
+  background-color: #fff;
+}
+.ind-shopCard-container .center .shopCard .shpo-pic {
+  display: block;
+}
+.ind-shopCard-container .center .shopCard .shop-name {
+  font-size: 34rpx;
+  font-weight: bold;
+  margin-top: 15rpx;
+  margin-bottom: 5rpx;
+}
+.ind-shopCard-container .center .shopCard .shop-distence {
+  margin: 14rpx 0 10rpx;
+  color: #666666;
+  font-size: 26rpx;
+}
+.ind-shopCard-container .center .shopCard .shop-distence .icons {
+  vertical-align: baseline;
+}
+.ind-shopCard-container .center .shopCard .shop-enter {
+  margin-top: 20rpx;
+  line-height: 49rpx;
+  height: 48rpx;
+  width: 155rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  background-color: #ffb910;
+}

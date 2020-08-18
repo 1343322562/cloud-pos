@@ -1,0 +1,37 @@
+import Taro, { request as _request } from "@tarojs/taro-h5";
+import { toast, loading } from "../tool/main";
+
+export default {
+  baseURL: 'https://5b5e71c98e9f160014b88cc9.mockapi.io', // 根路径
+  // get 请求
+  get: function (url, obj) {
+    loading(true);
+    return this.http('GET', url, obj);
+  },
+  // post 请求
+  post: function (url, obj) {
+    return this.http('POST', url, obj);
+  },
+  // 参数预处理
+  http: function (type, url, obj) {
+    console.log(url);
+    let reqObj = {
+      method: type,
+      url: this.baseURL + url,
+      data: obj.data,
+      header: obj.header || { 'content-type': 'application/json' },
+      dataType: obj.dataType || 'json',
+      fail: function (res) {
+        toast('数据获取失败');
+        console.log(res, '请求失败');
+      },
+      complete: function () {
+        loading(false);
+      }
+      // 数据预处理
+    };return _request(reqObj).then(res => {
+      if (res.statusCode != 200) throw new Error(`网络请求错误, 状态码${res.statusCode}`);
+      return res.data;
+    });
+  }
+};

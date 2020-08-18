@@ -1,0 +1,10 @@
+.v-navbar-bg {
+  background: linear-gradient(to bottom, #ffaf0e, #ffcb0b);
+}
+.custom .at-nav-bar__title {
+  font-weight: bold;
+}
+.transparent {
+  background-color: transparent;
+  margin-bottom: 13rpx;
+}

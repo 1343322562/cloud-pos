@@ -1,0 +1,18 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="selectAdress">
+        <view style="height: 60px;width: 100%;"></view>
+        <block wx:if="{{IS_H5_ENV}}">
+            <v-navbar compid="{{$compid__235}}"></v-navbar>
+        </block>
+        <view class="select-top">
+            <view class="select-location-box">
+                <picker mode="multiSelector" range="{{selector}}" bindchange="onChange">
+                    <view class="picker">{{selectorChecked}}</view>
+                </picker>
+            </view>
+            <view class="select-content">
+                <input type="text" placeholder="请输入收货地址" />
+            </view>
+        </view>
+    </view>
+</block>

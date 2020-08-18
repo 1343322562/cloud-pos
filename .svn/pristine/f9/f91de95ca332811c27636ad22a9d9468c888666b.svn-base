@@ -1,0 +1,68 @@
+.cardView {
+  height: 230px;
+  width: 94%;
+  background-color: white;
+  margin: 0 3%;
+  position: absolute;
+  z-index: 100;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.cv-user-info-box {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cv-user-info {
+  display: flex;
+  align-items: center;
+}
+
+.at-tag--active {
+  background-color: #fff6e6;
+  color: #fda308;
+  border: 0;
+  margin-bottom: -5px;
+}
+
+.cv-user-info .hearder,
+.texts {
+  display: inline-block;
+}
+
+.texts {
+  width: 370px;
+  letter-spacing: 2px;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+.InfoTitleClass {
+  font-size: 39px;
+  font-weight: bold;
+}
+
+.infoText {
+  font-size: 24px;
+  color: #666666;
+  line-height: 36px;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.cv-rightImg-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .text{
+    font-size: 23px;
+    margin-top: 10px;
+  }
+}

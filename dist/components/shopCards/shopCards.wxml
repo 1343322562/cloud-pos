@@ -1,0 +1,10 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="shopCard">
+        <image style="width: 68px;height: 68px;background: #eee;border-radius: 50%;border: 1px solid #feba0e;" class="shpo-pic" src="{{imageURL}}"></image>
+        <view class="shop-name">{{shopName}}</view>
+        <view class="shop-distence">
+            <at-icon compid="{{$compid__230}}"></at-icon><text> {{distence}}</text>
+        </view>
+        <view class="shop-enter" bindtap="anonymousFunc0">进入店铺</view>
+    </view>
+</block>

@@ -1,0 +1,13 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="{{weappStyle + ' index'}}">
+        <header-bg compid="{{$compid__214}}"></header-bg>
+        <view bindtap="anonymousFunc1" class="ind-selectAdress"><text class="ind-adress-sign">送至: </text><text class="ind-adress-content">某某大厦888</text>
+            <at-icon compid="{{$compid__215}}"></at-icon>
+        </view>
+        <view class="ind-shopCard-container">
+            <view class="center">
+                <shop-cards wx:key="index" wx:for="{{loopArray29}}" wx:for-item="item" wx:for-index="index" compid="{{item.$compid__213}}"></shop-cards>
+            </view>
+        </view>
+    </view>
+</block>

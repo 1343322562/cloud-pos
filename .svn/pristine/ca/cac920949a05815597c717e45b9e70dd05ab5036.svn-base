@@ -1,0 +1,63 @@
+import Nerv from "nervjs";
+import Taro from "@tarojs/taro-h5";
+import { View, Text, Image } from '@tarojs/components';
+import './cardView.scss';
+import { AtTag, AtAvatar } from 'taro-ui';
+
+export default class CardView extends Taro.Component {
+  state = {};
+
+  // 定义 addGlobalClass 外部样式可以影响组件
+  static options = {
+    addGlobalClass: true
+  };
+
+  static defaultProps = {
+    rightImgUrl: '',
+    leftImgSize: 'large',
+    title: '请登录',
+    rightImgStyle: 'width: 20px;height: 20px;background: #fff;',
+    rightImgText: null
+  };
+
+  componentWillMount() {}
+
+  componentDidMount() {}
+
+  componentWillUnmount() {}
+
+  componentDidShow() {}
+
+  componentDidHide() {}
+
+  render() {
+    let InfoType;
+    let InfoTitleClass;
+    if (this.props.infoType == 'Tag') {
+      InfoType = <AtTag size="small" active>{this.props.infoContent}</AtTag>;
+    } else if (this.props.infoType == 'Text') {
+      InfoTitleClass = 'InfoTitleClass';
+      InfoType = <Text className="infoText">{this.props.infoContent}</Text>;
+    }
+    return <View className="cardView">
+            <View className="cv-user-info-box">
+              <View className="cv-user-info">
+                <AtAvatar className="hearder" circle size={this.props.leftImgSize} image={this.props.leftImgUrl || 'https://jdc.jd.com/img/200'}></AtAvatar>
+                <View className="texts">
+                  <View className={InfoTitleClass + ' name'}>{this.props.title}</View>
+                  {InfoType}
+                  {/* <AtTag size='small' active>{this.props.info}</AtTag> */}
+                </View>
+              </View>
+              
+              <View className="cv-rightImg-box">
+              <Image onClick={() => this.props.onRightImgClick() || ''} style={this.props.rightImgStyle}
+          // style='width: 20px;height: 20px;background: #fff;'
+          src={this.props.rightImgUrl} />
+              <Text className="text">{this.props.rightImgText || null}</Text>
+              </View>
+              
+            </View>
+          </View>;
+  }
+}

@@ -1,0 +1,32 @@
+.selectAdress {
+  font-size: 29rpx;
+}
+.select-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 94%;
+  padding: 10rpx 3%;
+  font-size: 27rpx;
+}
+.select-top .select-location-box {
+  min-width: 150rpx;
+  padding: 5rpx;
+  border-right: 2rpx solid #aaa;
+  position: relative;
+}
+.select-top .select-location-box::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border: 0.21333rem solid transparent;
+  border-top-color: #4b4949;
+  display: block;
+  position: absolute;
+  top: 21rpx;
+  right: 8rpx;
+}
+.select-top .select-content {
+  flex: 1;
+  margin-left: 15rpx;
+}

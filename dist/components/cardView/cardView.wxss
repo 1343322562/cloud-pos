@@ -1,0 +1,83 @@
+.cardView {
+  height: 230rpx;
+  width: 94%;
+  background-color: white;
+  margin: 0 3%;
+  position: absolute;
+  z-index: 100;
+  border-radius: 25rpx;
+  display: flex;
+  align-items: center;
+}
+.cv-user-def-box {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cv-user-info-box {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.auz-btn {
+  height: 80rpx;
+  width: 270rpx;
+  margin: 0;
+  font-size: 30rpx;
+  padding: 0 15rpx;
+}
+.cv-user-info {
+  display: flex;
+  align-items: center;
+}
+.at-tag--active {
+  background-color: #fff6e6;
+  color: #fda308;
+  border: 0;
+  margin-bottom: -5rpx;
+}
+.cv-user-info .hearder,
+.texts {
+  display: inline-block;
+}
+.texts {
+  width: 370rpx;
+  letter-spacing: 2rpx;
+  margin-left: 30rpx;
+  margin-top: 5rpx;
+}
+.InfoTitleClass {
+  font-size: 39rpx;
+  font-weight: bold;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.infoText {
+  font-size: 24rpx;
+  color: #666666;
+  line-height: 36rpx;
+  display: inline-block;
+  margin-top: 8rpx;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cv-rightImg-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cv-rightImg-box .text {
+  font-size: 23rpx;
+  margin-top: 10rpx;
+}

@@ -1,0 +1,49 @@
+.editadress-btn {
+  height: 75rpx;
+  line-height: 75rpx;
+  width: 520rpx;
+  margin: 100rpx auto;
+}
+.custom .at-form::after {
+  border-width: 0;
+}
+.custom .at-input__title {
+  font-size: 28rpx;
+  color: #666666;
+}
+.at-button__text {
+  font-weight: bold;
+  color: #333333;
+}
+.custom .at-input__input {
+  font-size: 29rpx;
+  color: #333333;
+}
+.at-input__children {
+  z-index: 3000;
+  position: absolute;
+  left: 180rpx;
+  display: flex;
+  justify-content: space-around;
+  width: 300rpx;
+}
+.at-input {
+  margin: auto 35rpx;
+  border-bottom: 1PX solid #f1f1f1;
+}
+.at-input::after {
+  border-width: 0;
+}
+.custom .at-tag--small {
+  height: 38rpx;
+  line-height: 36rpx;
+  font-size: 22rpx;
+  color: #333333;
+  background-color: #fff;
+  border: 1rpx solid #999999;
+}
+.custom .at-tag--active {
+  color: #f24800;
+  background-color: #fadacc;
+  border: 1rpx solid #fadacc;
+}

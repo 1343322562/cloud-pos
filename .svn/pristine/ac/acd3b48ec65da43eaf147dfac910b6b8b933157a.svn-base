@@ -1,0 +1,95 @@
+import Nerv from "nervjs";
+import Taro from "@tarojs/taro-h5";
+import { View, Image, Text } from '@tarojs/components';
+import './goodsCar.scss';
+import VNavbar from "../../components/navbar/navbar"; // 导航栏
+import GoodsCarItem from "../../components/goodsCarItem/goodsCarItem"; // 商品列表 Item
+import { IS_WEAPP_ENV } from "../../tool/main";
+import { AtList, AtListItem, AtIcon, AtButton } from "taro-ui";
+// 导入图片
+import scanCode from '../../../public/images/scanCode.png';
+import adress from '../../../public/images/adress.png';
+import asd from '../../../public/images/asd.jpg';
+
+
+export default class Goodscar extends Taro.Component {
+
+  componentWillMount() {}
+
+  componentDidMount() {}
+
+  componentWillUnmount() {}
+
+  componentDidShow() {}
+
+  componentDidHide() {}
+
+  config = {
+    navigationBarTitleText: '购物车',
+    navigationBarBackgroundColor: '#ffaf11'
+
+    // 商品数量 add sub
+  };onSubGoodNumClick(e) {
+    console.log(e);
+  }
+
+  // 获取 头部地址卡片区域
+  getGoodCarAdressCard() {
+    return <View className="car-edit-adress-box">
+          <View className="car-sign">
+            <Image src={scanCode} style="height:20px;width:20px;" />
+            <View className="edit">编辑</View>
+          </View>
+          <AtList className="car-adress-card">
+            <AtListItem title="河北省石家庄市裕华区西梅梧州大厦" arrow="right" thumb={adress} />
+          </AtList>
+      </View>;
+  }
+
+  // 获取 结算区域
+  getGoodCarResCard() {
+
+    return <View className="res-info-box">
+            <View className="res-info">
+              <View className="selected-all">
+                <AtIcon className="checkout-all" value="check-circle" size="26" color="#ddd" />
+                <Text>全选</Text>
+              </View>
+              <View className="price-info">
+                <View className="after">合计: <Text className="span">￥21.90</Text></View>
+                <View className="before">总额: <Text className="span">￥21.90</Text></View>
+              </View>
+            </View>
+            <AtButton className="res-btn" type="primary">结算(0)</AtButton>
+          </View>;
+  }
+
+  render() {
+    // 导航栏
+    let Navbar = IS_WEAPP_ENV ? null : <VNavbar bg="transparent" text="购物车" leftIcon={true} rightFirstIcon={true} />;
+    // 头部背景
+    let headerBG = IS_WEAPP_ENV ? 'we-bg' : 'h5-bg';
+    // 头部地址卡片区域
+    let GoodCarAdressCard = this.getGoodCarAdressCard();
+    // 结算区域
+    let GoodCarResCard = this.getGoodCarResCard();
+
+    return <View className="goodsCar">
+        {/* 背景和导航栏 */}
+        <View className={'car-top-bg ' + headerBG} />
+        {Navbar}
+
+        {/* 商户卡片 */}
+        {GoodCarAdressCard}
+
+        <View className="goods-car-detail-box">
+           {/* 商品列表 */}
+          <GoodsCarItem className="good-info-item" goodImgUrl={asd} goodName="光明纯牛奶250ml*24盒" price="21.90" onSubGoodNumClick={e => this.onSubGoodNumClick(e)} />
+
+          {/* 结算区域 */}
+          {GoodCarResCard}
+        </View>
+
+      </View>;
+  }
+}

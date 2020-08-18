@@ -1,0 +1,19 @@
+.h5-top-bg {
+  position: absolute;
+  height: 320px;
+  width: 100%;
+  background-image: url('../../../public/images/myTopBG.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.we-top-bg {
+  position: absolute;
+  height: 200px;
+  width: 100%;
+  background-image: url('../../../public/images/myTopBG.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index: 0;
+}

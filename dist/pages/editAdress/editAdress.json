@@ -1,0 +1,1 @@
+{"usingComponents":{"v-navbar":"../../components/navbar/navbar","at-form":"../../npm/taro-ui/dist/weapp/components/form/index","v-adress-input":"../../components/editAdressFrom/editAdressFrom","at-button":"../../npm/taro-ui/dist/weapp/components/button/index"},"navigationBarTitleText":"编辑收货地址"}
